@@ -1,0 +1,26 @@
+<%- include('partials/header.ejs'); %>
+
+    <body>
+        <%- include('partials/navbar.ejs'); %>
+
+            <div class="container">
+                    <h1 class="text-center mt-5">Perguntas</h1>
+                <% perguntas.forEach(perguntas => { %>
+                    <div class="pergunta shadow-sm p-3 mt-4 mb-4 bg-white rounded">
+                        <h2>
+                            <%= perguntas.titulo %>
+                        </h2>
+                        <p>
+                            <%= perguntas.pergunta.substring(0, 200) + '...' %>
+                        </p>
+                        <div class="d-flex justify-content-end">
+                            <a class="btn btn-info" href="/pergunta/<%= perguntas.id %>">Ver pergunta</a>
+                        </div>
+                    </div>
+                    <% }); %>
+            </div>
+
+            <%- include('partials/footer.ejs'); %>
+    </body>
+
+    </html>
